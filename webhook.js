@@ -6,7 +6,7 @@ function sign(body){
     return `sha1=`+crypto.createHmac('sha1',SECRET).update(body).digest('hex')
 }
 let server = http.createServer(function(req,res){
-    if(req.method == 'POST' && req.url == '/webhook'){
+    if(req.method == 'POST' && req.url == '/TwWebhook'){
         let buffers = [];
         req.on('data',function(buffer){
             buffers.push(buffer);
@@ -24,11 +24,11 @@ let server = http.createServer(function(req,res){
         if(event == 'push'){//开始部署
             let payload = JSON.parse(body);
             let chils = spawn('sh',[`./${payload.repository.name}.sh`])
-            child.stdout.on('data',function(buffer){
+            chils.stdout.on('data',function(buffer){
                 buffers.push(buffer);
             });
             chuild.stdout.on('end',function(buffer){
-                let log = Buffer.concat(buffers);
+                let log = Buffer.concat(buffer);
                 console.log(log);
             });
         }
