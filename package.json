@@ -1,0 +1,13 @@
+{
+    "name": "webhook",
+    "version": "1.0.0",
+    "description": "",
+    "main": "webhook.js",
+    "scripts": {
+      "start": "pm2 start ./webhook.js --name webhook --watch",
+      "stop": "pm2 stop webhook"
+    },
+    "author": "",
+    "license": "ISC"
+  }
+  
