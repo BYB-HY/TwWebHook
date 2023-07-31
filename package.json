@@ -2,10 +2,10 @@
     "name": "webhook",
     "version": "1.0.0",
     "description": "",
-    "main": "TwWebhook.js",
+    "main": "webhook.js",
     "scripts": {
-      "start": "pm2 start ./TwWebhook.js --name TwWebhook --watch",
-      "stop": "pm2 stop TwWebhook"
+      "start": "pm2 start ./webhook.js --name webhook --watch",
+      "stop": "pm2 stop webhook"
     },
     "author": "",
     "license": "ISC"
