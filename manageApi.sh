@@ -7,9 +7,9 @@ git clean -f
 echo "拉取最新代码"
 git pull origin master
 echo "开始执行构建"
-docker build -t manageApi .
+docker build -t TwManageApi .
 echo "停止旧容器并删除旧容器"
-docker stop manageApi-container
-docker rm manageApi-container
+docker stop TwManageApi-container
+docker rm TwManageApi-container
 echo "启动新容器"
-docker container run -p 3000:3000 --name manageApi-container -d manageApi:1.0
+docker container run -p 3000:3000 --name TwManageApi-container -d TwManageApi:1.0

@@ -9,9 +9,9 @@ git pull origin master
 echo "编译"
 npm run build
 echo "开始执行构建"
-docker build -t manageWeb:1.0 .
+docker build -t TwManageWeb:1.0 .
 echo "停止旧容器并删除旧容器"
-docker stop manageWeb-container
-docker rm manageWeb-container
+docker stop TwManageWeb-container
+docker rm TwManageWeb-container
 echo "启动新容器"
-docker container run -p 80:80 --name manageWeb-container -d manageWeb:1.0
+docker container run -p 80:80 --name TwManageWeb-container -d TwManageWeb:1.0
